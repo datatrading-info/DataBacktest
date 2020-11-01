@@ -1,0 +1,13 @@
+numpy
+scipy
+matplotlib
+pandas
+scikit-learn
+ipython
+pyzmq
+pygments
+patsy
+statsmodels
+
+quandl
+mysqlclient
