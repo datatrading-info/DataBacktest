@@ -9,14 +9,14 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 
-from strategy.strategy import Strategy
-from event.event import SignalEvent
-from backtest.backtest import Backtest
+from strategy import Strategy
+from event import SignalEvent
+from backtest import Backtest
 
-from data.hft_data import HistoricCSVDataHandlerHFT
-from portfolio.hft_portfolio import PortfolioHFT
+from data import HistoricCSVDataHandlerHFT
+from portfolio import PortfolioHFT
 
-from execution.execution import SimulatedExecutionHandler
+from execution import SimulatedExecutionHandler
 
 class IntradayOLSMRStrategy(Strategy):
     """
@@ -40,7 +40,7 @@ class IntradayOLSMRStrategy(Strategy):
         self.ols_window = ols_window
         self.zscore_low = zscore_low
         self.zscore_high = zscore_high
-        self.pair = ('AREX', 'WLL')
+        self.pair = ('AREXQ', 'WLL')
         self.datetime = datetime.datetime.utcnow()
         self.long_market = False
         self.short_market = False
@@ -134,11 +134,12 @@ class IntradayOLSMRStrategy(Strategy):
 
 
 if __name__ == "__main__":
-    csv_dir = '/path/to/your/csv/file' # DA MODIFICARE
-    symbol_list = ['AREX', 'WLL']
+    #csv_dir = '/path/to/your/csv/file' # DA MODIFICARE
+    csv_dir = 'csv_files'  # DA MODIFICARE
+    symbol_list = ['AREXQ', 'WLL']
     initial_capital = 100000.0
     heartbeat = 0.0
-    start_date = datetime.datetime(2007, 11, 8, 10, 41, 0)
+    start_date = datetime.datetime(2008, 11, 8, 10, 41, 0)
 
     backtest = Backtest(
         csv_dir, symbol_list, initial_capital, heartbeat,start_date,

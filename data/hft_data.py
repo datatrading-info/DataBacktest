@@ -2,7 +2,7 @@
 import datetime
 import os, os.path
 import pandas as pd
-
+import numpy as np
 
 from event.event import MarketEvent
 from data.data import DataHandler
@@ -146,12 +146,6 @@ class HistoricCSVDataHandlerHFT(DataHandler):
         else:
             return np.array([getattr(b[1], val_type) for b in bars_list])
 
-    @abstractmethod
-    def update_bars(self):
-        """
-        Inserisce la barra più recente nella struttura delle barre per
-        tutti i simboli della lista di simboli.
-        """
 
     def update_bars(self):
         """

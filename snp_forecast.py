@@ -8,13 +8,13 @@ import datetime
 import pandas as pd
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis as QDA
 
-from strategy.strategy import Strategy
-from event.event import SignalEvent
-from backtest.backtest import Backtest
-from data.data import HistoricCSVDataHandler
-from execution.execution import SimulatedExecutionHandler
-from portfolio.portfolio import Portfolio
-from model.forecast import create_lagged_series
+from strategy import Strategy
+from event import SignalEvent
+from backtest import Backtest
+from data import HistoricCSVDataHandler
+from execution import SimulatedExecutionHandler
+from portfolio import Portfolio
+from model import create_lagged_series
 
 class SPYDailyForecastStrategy(Strategy):
     """

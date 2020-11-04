@@ -11,28 +11,28 @@ if __name__ == "__main__":
         parse_dates=True, index_col=0
     )
 
-    # Plot three charts: Equity curve,
-    # period returns, drawdowns
+    # Visualizza tre grafici: curva di Equity,
+    # rendimenti, drawdown
     fig = plt.figure()
 
-    # Set the outer colour to white
+    # Imposta il bianco come colore di sfondo
     fig.patch.set_facecolor('white')
 
-    # Plot the equity curve
+    # Visualizza la curva di equity
     ax1 = fig.add_subplot(311, ylabel='Portfolio value, % ')
     data['equity_curve'].plot(ax=ax1, color="blue", lw=2.)
     plt.grid(True)
 
-    # Plot the returns
+    # Visualizza i rendimenti
     ax2 = fig.add_subplot(312, ylabel='Period returns, % ')
     data['returns'].plot(ax=ax2, color="black", lw=2.)
     plt.grid(True)
 
-    # Plot the drawdowns
+    # Visualizza i drawdown
     ax3 = fig.add_subplot(313, ylabel='Drawdowns, % ')
     data['drawdown'].plot(ax=ax3, color="red", lw=2.)
     plt.grid(True)
 
-    # Plot the figure
+    # Stampa i grafici
     plt.show()
     print("")
